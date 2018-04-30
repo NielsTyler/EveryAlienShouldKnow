@@ -1,0 +1,21 @@
+ body {
+    background-image: url(img/background.jpg); 
+    background-color: #c7b39b; 
+    background-position: no-repeat;
+   }
+
+.alien1 {
+    height: 739px;
+    width: 446px;
+    background-image: url(img/BirdmanStaying.png);   
+}
+
+.hero1 {
+    height: 460px;
+    width: 199px;
+    background-image: url(img/spaceSuitHumanWalking.png);    
+}
+
+.heroOffset {
+	padding-right: 150px;
+}
