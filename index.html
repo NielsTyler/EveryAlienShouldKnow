@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -14,30 +14,41 @@
         var alien1;
 
     	$(document).ready(function(){
-                man1 = new Charachter('hero1');
-		alien1 = new Charachter('alien1');   
-		
-		alien1.Init();  
-		man1.Init();           
+    	    Level1();
+    	});
 
- 		//if (typeof man1 !== "undefined" && man1 !== null)
-		//man1.Show(1430, 520);
-		man1.Show(2430, 520);
+    	function OnLevelFinish()
+    	{
 
-		man1.HumanComeToScene();
+    	}
 
-		alien1.Show(600, 320);									 			
-        });       
+    	function Level1()
+    	{
+    	    var ManHorizontalShiftOnStartInPix = "1000";
+            //All in pixels
+    	    var Left_ManStartPosOutOfScreen = 2430;
+    	    var Top_ManStartPosOutOfScreen = 520;
+
+    	    var Left_AlienStartPosOutOfScreen = 600;
+    	    var Top_AlienStartPosOutOfScreen = 320;
+
+    	    man1 = new Charachter('hero1');
+    	    alien1 = new Charachter('alien1');
+
+    	    alien1.Init();
+    	    man1.Init();
+
+    	    //if (typeof man1 !== "undefined" && man1 !== null)
+    	    //man1.Show(1430, 520);
+    	    //man1.Show(2430, 520);
+    	    man1.Show(Left_ManStartPosOutOfScreen, Top_ManStartPosOutOfScreen);
+
+    	    man1.HumanComeToScene(ManHorizontalShiftOnStartInPix);
+
+    	    alien1.Show(Left_AlienStartPosOutOfScreen, Top_AlienStartPosOutOfScreen);
+    	}
         
-    </script>
-    <style type="text/css">            
-            .scott {
-                height: 140px;
-                width: 108px;
-                background-image: url(img/scottpilgrim_multiple.png);
-                display: inline-block;
-            }
-     </style>
+    </script>    
 </head>
 <body>
 	<div id="hero1" class="heroOffset"><div class="hero1"></div></div>

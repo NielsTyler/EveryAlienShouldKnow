@@ -1,0 +1,129 @@
+—делать центрирование на персонажах.
+
+
+var classA = function() {     // declaring a "class"
+    this.something = "Text";  // a public class field
+};
+
+classA.prototype.b = " b ";   // a class field
+classA.c = "c";               // a static field
+classA.prototype.d = function(x) { // a public class method
+};
+classA.e = function(x){     // a public static method
+};
+
+var a = new classA();       // instantiate a class
+
+*********************************
+
+
+
+Define a function with the name of the class. Any var defined within it as this.whatever will act as a class member:
+
+function SomeClass() {
+  this.a;
+  this.b;
+}
+
+Then add methods to the prototype:
+
+SomeClass.prototype.methodA = function() {
+  this.a++;
+}
+
+SomeClass.prototype.methodB = function() {
+  this.b++;
+}
+
+I believe you can also define methods inside the constructor like this, but I've not used this syntax for a long time.
+
+function SomeClass {
+   this.a = 0;
+
+   // Method definition
+   this.methodA = function() {
+      this.a++;
+   }
+}
+
+
+
+***********************
+
+$(".scott").animateSprite({
+	    				fps: 12,
+	    				animations: {
+	        			walkRight: [0, 1, 2, 3, 4, 5, 6, 7],
+	        			walkLeft: [15, 14, 13, 12, 11, 10, 9, 8]
+	    			    },
+	    			    loop: true,
+	    			    complete: function(){                            
+	        		    // use complete only when you set animations with 'loop: false'
+	        		    //alert("animation End");
+	                                                                
+	                            }
+			});
+
+ #sample7-demo > div { float: left; width: 150px; height: 150px; background-color: #ddd; margin: 20px; }
+          .balloon-sample7-2 {
+            width: 226px; height: 163px; line-height: 153px;
+            background: url(img/balloon-sample1.png) center center no-repeat transparent;
+            color: #fff; font-size: 150%; font-weight: bold; text-align: center;
+          }
+          .balloon-sample7-2 a { color: inherit; }
+
+
+523
+760
+
+*****
+446
+739
+
+1784
+
+MUSIC:
+Chilly Gonzales Ц Evolving Doors
+Aaron Lampert Ц Look at the monkey 
+sebastian Ц dolami
+
+SpaceHuman
+W 199
+H 460
+
+Total W 1194
+
+
+Width
+
+
+ this.Waiting = function(){				
+				//$(this.CssClassName).animateSprite('play', 'waiting');
+		      }
+
+		      this.ShowMessage = function(){						
+				$("." + this.Id).showBalloon({                  		  
+									  tipSize: 24,
+									  css: {
+									    border: 'solid 4px #F8F8FF',
+									    padding: '10px',
+									    fontSize: '150%',
+									    fontWeight: 'bold',
+									    lineHeight: '3',
+									    backgroundColor: '#666',
+									    color: '#fff'
+									  }, 
+							                  contents: "3 * 4 = ?",
+							                  showDuration: 1000, hideDuration: 500
+									});	
+		      }
+
+#E72508
+
+‘е€ w 200
+    h 208
+
+ $("#" + this.Id).animate({ 
+        				width: "200", height: "208"
+      				}, 4000, "linear");
+

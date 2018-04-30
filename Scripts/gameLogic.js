@@ -1,24 +1,24 @@
-	function Charachter(charachterId) {    
+	    function Charachter(charachterId) {    
                      this.Id = charachterId; 
-		     this.CssClassName = "." + this.Id;     		     		                            
+		             this.CssClassName = "." + this.Id;     		     		                            
 		};
 
-                Charachter.prototype.Init = function(){
+        Charachter.prototype.Init = function(){
 
-				if (this.Id == 'alien1')
-				{
-		     			this.AnimateAlien();
-				}
-				else
-				{
-					this.AnimateHero();
-				}
+		    if (this.Id == 'alien1')
+		    {
+		     	    this.AnimateAlien();
+		    }
+		    else
+		    {
+			    this.AnimateHero();
+		    }
 
-				 //$(this.CssClassName).animateSprite('stop');				
+			//$(this.CssClassName).animateSprite('stop');				
 				 				
-		     }
+		}
 
-		 Charachter.prototype.AnimateHero= function(){
+		 Charachter.prototype.AnimateHero = function(){
 			$(this.CssClassName).animateSprite({
 	    				fps: 4,
 	    				animations: {
@@ -58,33 +58,33 @@
 
 		      Charachter.prototype.AlienDisappear = async function()
 		     {	 
- 			 await sleep(1000); 			
-			 $(this.CssClassName).animateSprite('stop');			 
-			 await sleep(1000);
+ 			     await sleep(1000); 			
+			     $(this.CssClassName).animateSprite('stop');			 
+			     await sleep(1000);
 			  
-			 $("#" + this.Id).css('background-image', 'url(img/fairyTeethMicro.png)');
-			 $("#" + this.Id).css('background-repeat', 'no-repeat');  
+			     //$("#" + this.Id).css('background-image', 'url(img/fairyTeethMicro.png)');
+			     //$("#" + this.Id).css('background-repeat', 'no-repeat');  
 			
-			 // 
+			     // 
 			 				
-			 var duration = 9000;
+			     //var duration = 9000;
 
-			 $("#" + this.Id).animate({ 
-				left: "-=1000px",
-				top:"-=1000px"
-				}, duration, "linear" );
+			     //$("#" + this.Id).animate({ 
+				 //   left: "-=1000px",
+				 //   top:"-=1000px"
+				 //   }, duration, "linear" );
 
-			   await sleep(4000);
+			     //await sleep(4000);
 
-			   man1.HumanDisappear();								  
+			     //man1.HumanDisappear();								  
 		      }
 
 		      Charachter.prototype.HumanDisappear = function()
 		      {
-			  $("#" + this.Id).animate({ 
-				left: "-=1000px",
-				top:"-=1000px"
-				}, 8000, "linear" );
+			      $("#" + this.Id).animate({ 
+				    left: "-=1000px",
+				    top:"-=1000px"
+				    }, 8000, "linear" );
 		      }
 
 		      Charachter.prototype.AlienCalculating = function()
@@ -172,21 +172,19 @@
 				$(this.CssClassName).hideBalloon();
 			}			
 
-		       Charachter.prototype.HumanComeToScene = function()
-		       { 
-			        var duration = 5000;
-
-				$("#" + this.Id).animate({ 
-        				left: "-=1000px",
-      				}, duration, "linear", function() {    						
-						$( this.CssClassName ).animateSprite('stop');
+			Charachter.prototype.HumanComeToScene = function(horizontalShift)
+		    { 
+		        var duration = 5000;
+		      
+			    $("#" + this.Id).animate({ 
+			        left: "-=" + horizontalShift + "px",
+      			    }, duration, "linear", function() {    						
+					    //$( this.CssClassName ).animateSprite('stop');
 						
-						StartGame();
-  					});
-		        }
-
-			
-			
+					    StartGame();
+  				    });
+		    }
+					
 
 			//**********************************Game logic******************************************
 			var actualCorrectAnswer;
@@ -198,14 +196,15 @@
 			var errorsLimit = 2;
 			var correctAnswersLimit = 1;			
 
-		        async function StartGame()
-		        {
-				alien1.StopAnimation();
-				alien1.MessageFromAlien(GenerateQuestion(), DefaultMessageBackColor);
-				await sleep(2000);
-				man1.AnswerFromHuman();	
-				window.scroll(500, 200);			  			
-		        }
+		    async function StartGame()
+		    {
+		        man1.StopAnimation();
+			    alien1.StopAnimation();
+			    alien1.MessageFromAlien(GenerateQuestion(), DefaultMessageBackColor);
+			    await sleep(2000);
+			    man1.AnswerFromHuman();	
+			    window.scroll(500, 200);			  			
+		    }
 			
 			async function CheckAnswer()
 			{					
@@ -262,7 +261,7 @@
 
 			function Win()
 			{
-				alien1.AlienDisappear();
+				//alien1.AlienDisappear();
 			}
 
 			//*************************Helpers********************************************************
